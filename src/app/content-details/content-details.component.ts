@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Data } from '../data';
 import { DataService } from '../data.service';
 import { mobileCards } from '../model';
+import { ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-content-details',
@@ -9,17 +11,15 @@ import { mobileCards } from '../model';
   styleUrl: './content-details.component.css'
 })
 export class ContentDetailsComponent implements OnInit{
-  constructor(private DataService: DataService){}
+  constructor(private dataService: DataService,
+    private route: ActivatedRoute){}
+  
 
   phoneCase: mobileCards[] = []
   data = new(Data)
-  contentDetails = this.data.mobileCover;
+  contentDetails: mobileCards | null = null;
 
-  getContent(): void {
-    this.phoneCase = this.DataService.getContent();
-  }
-
-  ngOnInit(): void {
-    this.getContent()
-  }
+    ngOnInit(): void {
+      this.contentDetails = this.dataService.getSelectedContent();
+    }
 }

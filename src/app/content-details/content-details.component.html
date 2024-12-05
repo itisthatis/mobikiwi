@@ -1,11 +1,11 @@
-<div class="container">
+<!-- <div class="container">
     <div class="row">
         <div class="col-md-6">
             <div class="img-sec" *ngFor="let data of contentDetails">
                 <img class="w-100" [src]="data.imgDetail" />
             </div>
         </div>
-        <!-- <div class="col-md-6">
+        <div class="col-md-6">
             <section class="firstPart" *ngFor="let data of contentDetails">
                 <div class="card-body">
                     <h6 class="card-title">{{data.title}}</h6>
@@ -15,6 +15,23 @@
                   </div>
             </section>
             <section class="seconndPart"></section>
-        </div> -->
+        </div>
     </div>
 </div>
+ -->
+ <div class="container" *ngIf="contentDetails">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="img-sec">
+          <img class="w-100" [src]="contentDetails.imgDetail" />
+        </div>
+      </div>
+      <div class="col-md-6">
+        <h2>{{ contentDetails.title }}</h2>
+        <p>Price: {{ contentDetails.price }}</p>
+        <p>Rating: {{ contentDetails.rating }}</p>
+        <p>Availability: {{ contentDetails.availability }}</p>
+      </div>
+    </div>
+  </div>
+  

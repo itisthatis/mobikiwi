@@ -1,12 +1,11 @@
 <div class="container py-3">
     <div class="row justify-content-center">
-        <div class="card my-2 mx-2" (click)="getContentDetails()" routerLink="/contentdetails" style="width: 18rem; cursor: pointer;" *ngFor="let mobi of mobiCover">
+        <div class="card my-2 mx-2" (click)="onCardClick(mobi)" routerLink="/contentdetails" style="width: 18rem; cursor: pointer;" *ngFor="let mobi of mobiCover">
             <img [src]="mobi.img" class="card-img-top pt-3" alt="...">
             <div class="card-body">
               <h6 class="card-title">{{mobi.title}}</h6>
               <h6 class="card-title">TSk</h6>
               <p class="card-text fs-4 fw-bolder" style="font-size: 600;">{{mobi.price}}</p>
-              <!-- <a href="#" class="btn btn-primary">{{mobi.rating}}</a> -->
               <div class="d-flex justify-content-between"><span class="badge text-bg-success px-3 fs-6 fw-light rounded-pill" style="background-color: rgb(25,135,84);">{{mobi.rating}}</span><span>{{mobi.availability}}</span></div>
             </div>
           </div>

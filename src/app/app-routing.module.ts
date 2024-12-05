@@ -6,16 +6,16 @@ import { ContentComponent } from './content/content.component';
 const routes: Routes = [
   {
     path:'',
+    redirectTo: '/content', pathMatch: 'full'
+  },
+  {
+    path:'content',
     component:ContentComponent
   },
   {
     path:'contentdetails',
     component:ContentDetailsComponent
-  },
-  /* {
-    path:'**',
-    component:PageNotFoundComponent
-  }, */
+  }
   
 ];
 

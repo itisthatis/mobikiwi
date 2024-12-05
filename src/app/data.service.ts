@@ -13,14 +13,13 @@ export class DataService {
 
   constructor() { }
 
-  getContentDetails(id:number):Observable<mobileCards | undefined>{
-    const result = this.DATA.find(item => item.id === id);
-    return of(result); // Returns an Observable of the found item
-  }
+    private selectedContent: mobileCards | null = null;
 
-  getContent(): mobileCards[] {
-    return this.DATA;
-  }
+    setSelectedContent(content: mobileCards): void {
+      this.selectedContent = content;
+    }
 
-
+    getSelectedContent(): mobileCards | null {
+      return this.selectedContent;
+    }
 }

@@ -17,19 +17,12 @@ export class ContentComponent implements OnInit {
   mobiCover = this.data.mobileCover;
   getContent : mobileCards | undefined;
 
-
- /*  getContentDetails(id:number){
-    console.log(id)
-  } */
-  getContentDetails(): void {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
-    
-    this.DataService
-      .getContentDetails(id)
-      .subscribe((content) => (this.getContent = content)); // TODO refactor to getter
-  }
   ngOnInit() {
-    this.getContentDetails();
+
+  }
+
+  onCardClick(content: mobileCards): void {
+    this.DataService.setSelectedContent(content);
   }
 
 }
