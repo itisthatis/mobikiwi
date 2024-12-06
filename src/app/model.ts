@@ -5,5 +5,10 @@ export interface mobileCards{
     title: string,
     price: string,
     rating: string,
-    availability:string
+    availability:string,
+    Brand : string,
+    Color : string,
+    Material : string,
+    Theme : string,
+    Type : string
 }

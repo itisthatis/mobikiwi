@@ -1,36 +1,45 @@
-<!-- <div class="container">
-    <div class="row">
-        <div class="col-md-6">
-            <div class="img-sec" *ngFor="let data of contentDetails">
-                <img class="w-100" [src]="data.imgDetail" />
-            </div>
-        </div>
-        <div class="col-md-6">
-            <section class="firstPart" *ngFor="let data of contentDetails">
-                <div class="card-body">
-                    <h6 class="card-title">{{data.title}}</h6>
-                    <p class="card-text fs-4 fw-bolder" style="font-size: 600;">{{data.price}}</p>
-                    <a href="#" class="btn btn-primary">{{mobi.rating}}</a>
-                    <div class="d-flex justify-content-between"><span class="badge text-bg-success px-3 fs-6 fw-light rounded-pill" style="background-color: rgb(25,135,84);">{{data.rating}}</span><span>{{data.availability}}</span></div>
-                  </div>
-            </section>
-            <section class="seconndPart"></section>
-        </div>
-    </div>
-</div>
- -->
  <div class="container" *ngIf="contentDetails">
     <div class="row">
       <div class="col-md-6">
         <div class="img-sec">
-          <img class="w-100" [src]="contentDetails.imgDetail" />
+          <img class="w-100 p-2 border border-secondary-subtle rounded" [src]="contentDetails.imgDetail" />
+          <div class="d-flex my-3 justify-content-center">
+            <button type="button" class="btn btn-lg me-3 w-100" style="border-color: #9f2089; color: #9f2089;"><i class="pi pi-shopping-cart"></i> Add to Card</button>
+            <button type="button" class="btn btn-lg w-100" style="background-color: #9f2089; color: #fff;"><i class="pi pi-cart-arrow-down"></i> Buy Now</button>
+          </div>
         </div>
       </div>
       <div class="col-md-6">
-        <h2>{{ contentDetails.title }}</h2>
-        <p>Price: {{ contentDetails.price }}</p>
-        <p>Rating: {{ contentDetails.rating }}</p>
-        <p>Availability: {{ contentDetails.availability }}</p>
+        <div class="border border-secondary-subtle rounded p-3">
+          <h5 style="color: #6c757d;">{{ contentDetails.title }}</h5>
+          <p class="fs-5 fw-bold mb-2">Price: {{ contentDetails.price }}</p>
+          <div class="quantity mb-3 d-inline-flex rounded" style="box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);border: 2px solid #9f2089;
+  border-radius: 4px;">
+            <button class="minus border-0" aria-label="Decrease" style="background-color: #9f2089;color: #fff;">&minus;</button>
+            <input type="number" class="input-box border-0 text-center" value="1" min="1" max="10" style="width: 40px;padding: 4px 10px;outline: none;">
+            <button class="plus border-0" aria-label="Increase" style="background-color: #9f2089;color: #fff;">&plus;</button>
+          </div>
+          <div class="d-flex justify-content-between">
+            <p class="mb-2 bg-info-subtle text-info-emphasis d-inline rounded py-1 px-2" style="color: rgb(10 54 34);background-color: rgb(209 231 221);">Rating: {{ contentDetails.rating }}</p>
+            <p class="my-2" style="font-size: 14px;letter-spacing: 0.5px;">Availability: {{ contentDetails.availability }}</p>
+          </div>
+        </div>
+
+        <div class="border border-secondary-subtle rounded p-3 my-3">
+          <h5 class="" style="color: #6c757d;">Product Details</h5>
+          <ul class="list-group">
+            <li class="list-group-item"><span class="fw-bold">Name:</span> {{contentDetails.title}}</li>
+            <li class="list-group-item"><span class="fw-bold">Color:</span> {{contentDetails.Color}}</li>
+            <li class="list-group-item"><span class="fw-bold">Material:</span> {{contentDetails.Material}}</li>
+            <li class="list-group-item"><span class="fw-bold">Theme:</span> {{contentDetails.Theme}}</li>
+            <li class="list-group-item"><span class="fw-bold">Type:</span> {{contentDetails.Type}}</li>
+          </ul>
+        </div>
+
+        <div class="border border-secondary-subtle rounded p-3">
+          <h5 class="mb-3" style="color: #6c757d;">Select Size</h5>
+          <p class="border rounded-pill py-2 px-3 d-inline" style="border-color: #9f2089 !important; color: #9f2089;">Free Size</p>
+        </div>
       </div>
     </div>
   </div>

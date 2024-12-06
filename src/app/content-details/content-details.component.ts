@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Data } from '../data';
 import { DataService } from '../data.service';
 import { mobileCards } from '../model';
-import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -11,12 +10,9 @@ import { ActivatedRoute } from '@angular/router';
   styleUrl: './content-details.component.css'
 })
 export class ContentDetailsComponent implements OnInit{
-  constructor(private dataService: DataService,
-    private route: ActivatedRoute){}
-  
 
-  phoneCase: mobileCards[] = []
-  data = new(Data)
+  constructor(private dataService: DataService){}
+  
   contentDetails: mobileCards | null = null;
 
     ngOnInit(): void {
